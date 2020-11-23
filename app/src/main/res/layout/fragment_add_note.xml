@@ -6,46 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".ui.AddNoteFragment">
 
-    <TextView
-        android:id="@+id/tvTitleHeader"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilNoteTitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/title_txt"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/tvNoteHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/note_txt"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTitle" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title"
+            android:padding="8dp"
+            android:textSize="24sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/etTitle"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilNoteText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleHeader" />
+        app:layout_constraintTop_toBottomOf="@+id/tilNoteTitle">
 
-    <EditText
-        android:id="@+id/etNote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNoteHeader" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Note"
+            android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/save_txt"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"
+        android:text="Save"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilNoteText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
